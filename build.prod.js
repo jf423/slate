@@ -4899,10 +4899,7 @@ var RULES = [{
       type: 'link',
       nodes: next(el.childNodes),
       data: {
-        href: el.attrs.find(function (_ref) {
-          var name = _ref.name;
-          return name == 'href';
-        }).value
+        href: el.href
       }
     };
   }
@@ -4926,7 +4923,7 @@ var PasteHtml = function (_React$Component) {
   _inherits(PasteHtml, _React$Component);
 
   function PasteHtml() {
-    var _ref2;
+    var _ref;
 
     var _temp, _this, _ret;
 
@@ -4936,10 +4933,10 @@ var PasteHtml = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = PasteHtml.__proto__ || Object.getPrototypeOf(PasteHtml)).call.apply(_ref2, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PasteHtml.__proto__ || Object.getPrototypeOf(PasteHtml)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       state: _slate.State.fromJSON(_state2.default)
-    }, _this.onChange = function (_ref3) {
-      var state = _ref3.state;
+    }, _this.onChange = function (_ref2) {
+      var state = _ref2.state;
 
       _this.setState({ state: state });
     }, _this.onPaste = function (e, data, change) {
